@@ -8,4 +8,9 @@ public class PixelUtils {
         DisplayMetrics metrics = context.getResources().getDisplayMetrics();
         return (int) (dp * metrics.density + 0.5f);
     }
+
+    public static int pxToDp(Context context, float px) {
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        return (int) (px / metrics.density + 0.5);
+    }
 }
