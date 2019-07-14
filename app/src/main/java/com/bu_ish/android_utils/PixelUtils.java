@@ -18,4 +18,9 @@ public class PixelUtils {
         DisplayMetrics metrics = context.getResources().getDisplayMetrics();
         return metrics.widthPixels;
     }
+
+    public static int getDisplayHeight(Context context) {
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        return metrics.heightPixels;
+    }
 }
