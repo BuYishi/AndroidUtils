@@ -14,6 +14,11 @@ public class PixelUtils {
         return (int) (px / metrics.density + 0.5);
     }
 
+    public static int spToPx(Context context, float sp) {
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        return (int) (sp * metrics.scaledDensity + 0.5);
+    }
+
     public static int getDisplayWidth(Context context) {
         DisplayMetrics metrics = context.getResources().getDisplayMetrics();
         return metrics.widthPixels;
