@@ -4,16 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/colorAccent"
-        android:digits="0123456789"
-        android:inputType="phone"
-        android:maxLength="4" />
-
-    <com.bu_ish.android_utils.VerificationCodeEditText
+    <com.bu_ish.android_utils.CountdownTextView
+        android:id="@+id/ctv"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary" />
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:text="获取验证码"
+        android:textColor="@android:color/white" />
 </LinearLayout>
