@@ -10,7 +10,6 @@ import androidx.appcompat.widget.AppCompatEditText;
 public class MobilePhoneEditText extends AppCompatEditText {
     public MobilePhoneEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setBackground(null);
         setKeyListener(DigitsKeyListener.getInstance("0123456789"));
         setFilters(new InputFilter[]{new InputFilter.LengthFilter(11)});
     }
