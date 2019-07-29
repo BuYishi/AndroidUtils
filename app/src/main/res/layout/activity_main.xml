@@ -10,13 +10,10 @@
         android:background="@color/colorAccent"
         android:digits="0123456789"
         android:inputType="phone"
-        android:maxLength="11" />
+        android:maxLength="4" />
 
-    <com.bu_ish.android_utils.MobilePhoneEditText
-        android:layout_width="match_parent"
+    <com.bu_ish.android_utils.VerificationCodeEditText
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="30dp"
-        android:background="@color/colorPrimaryDark" />
+        android:background="@color/colorPrimary" />
 </LinearLayout>
