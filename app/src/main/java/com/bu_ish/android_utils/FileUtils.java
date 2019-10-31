@@ -1,5 +1,7 @@
 package com.bu_ish.android_utils;
 
+import android.content.Context;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -56,6 +58,16 @@ public class FileUtils {
     public static void copy(InputStream source, File destination) throws IOException {
         try (BufferedInputStream bis = new BufferedInputStream(source); BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(destination))) {
             copy(bis, bos);
+        }
+    }
+
+    public static String readAssetFileAsString(Context context, String filename) {
+        try (BufferedInputStream bis = new BufferedInputStream(context.getAssets().open(filename))) {
+            byte[] buffer = new byte[bis.available()];
+            bis.read(buffer);
+            return new String(buffer);
+        } catch (IOException ex) {
+            return null;
         }
     }
 
