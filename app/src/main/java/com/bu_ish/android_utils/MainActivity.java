@@ -3,12 +3,14 @@ package com.bu_ish.android_utils;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private CountdownTextView ctv;
+    private Button btnVibrate;
     private static MainActivity instance;
 
     @Override
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         instance = this;
         setContentView(R.layout.activity_main);
         ctv = findViewById(R.id.ctv);
+        btnVibrate = findViewById(R.id.btnVibrate);
         ctv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
                         ctv.setText("获取验证码");
                     }
                 });
+            }
+        });
+        btnVibrate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                VibrateUtils.vibrate(v.getContext(), 20);
             }
         });
         testLeakCanary();
