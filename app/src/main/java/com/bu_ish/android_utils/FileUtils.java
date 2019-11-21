@@ -2,6 +2,8 @@ package com.bu_ish.android_utils;
 
 import android.content.Context;
 
+import androidx.annotation.Nullable;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -61,6 +63,7 @@ public class FileUtils {
         }
     }
 
+    @Nullable
     public static String readAssetFileAsString(Context context, String filename) {
         try (BufferedInputStream bis = new BufferedInputStream(context.getAssets().open(filename))) {
             byte[] buffer = new byte[bis.available()];
