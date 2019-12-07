@@ -5,19 +5,19 @@ import android.util.DisplayMetrics;
 
 public class PixelUtils {
     public static int dpToPx(Context context, float dp) {
-        return (int) (dp * getDisplayMetrics(context).density + 0.5f);
+        return round(dp * getDisplayMetrics(context).density);
     }
 
     public static int pxToDp(Context context, float px) {
-        return (int) (px / getDisplayMetrics(context).density + 0.5f);
+        return round(px / getDisplayMetrics(context).density);
     }
 
     public static int spToPx(Context context, float sp) {
-        return (int) (sp * getDisplayMetrics(context).scaledDensity + 0.5f);
+        return round(sp * getDisplayMetrics(context).scaledDensity);
     }
 
     public static int pxToSp(Context context, float px) {
-        return (int) (px / getDisplayMetrics(context).scaledDensity + 0.5f);
+        return round(px / getDisplayMetrics(context).scaledDensity);
     }
 
     public static int getDisplayWidth(Context context) {
@@ -30,5 +30,9 @@ public class PixelUtils {
 
     private static DisplayMetrics getDisplayMetrics(Context context) {
         return context.getResources().getDisplayMetrics();
+    }
+
+    private static int round(float f) {
+        return (int) (f + 0.5f);
     }
 }
